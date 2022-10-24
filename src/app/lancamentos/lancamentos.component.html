@@ -1,0 +1,63 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <h5>Lançamentos</h5>
+
+    <div class="grid p-fluid">
+
+        <div class="field col-12 md:col-3" ngModelGroup="casa">
+            <label for="currency-us">Conta de Água</label>
+            <p-inputNumber [(ngModel)]="valorAgua" inputId="currency-us" mode="currency" currency="BRL" locale="pt-BR"
+                name="agua">
+            </p-inputNumber>
+
+            <label for="currency-us">Conta de Luz</label>
+            <p-inputNumber [(ngModel)]="valorLuz" inputId="currency-us" mode="currency" currency="BRL" locale="pt-BR"
+                name="luz">
+            </p-inputNumber>
+
+            <label for="currency-us">Internet</label>
+            <p-inputNumber [(ngModel)]="valorInternet" inputId="currency-us" mode="currency" currency="BRL"
+                locale="pt-BR" name="internet">
+            </p-inputNumber>
+
+            <label for="currency-us">Vigilante</label>
+            <p-inputNumber [(ngModel)]="valorVigilante" inputId="currency-us" mode="currency" currency="BRL"
+                locale="pt-BR" name="vigilante">
+            </p-inputNumber>
+
+            <label for="currency-us">IPTU</label>
+            <p-inputNumber [(ngModel)]="valorIptu" inputId="currency-us" mode="currency" currency="BRL" locale="pt-BR"
+                name="iptu">
+            </p-inputNumber>
+        </div>
+
+        <div class="field col-12 md:col-3" ngModelGroup="cartoes">
+            <label for="currency-us">Fatura Giordano</label>
+            <p-inputNumber [(ngModel)]="valorFaturaJo" inputId="currency-us" mode="currency" currency="BRL"
+                locale="pt-BR" name="faturaJo">
+            </p-inputNumber>
+
+            <label for="currency-us">Fatura Aline</label>
+            <p-inputNumber [(ngModel)]="valorFaturaOdy" inputId="currency-us" mode="currency" currency="BRL"
+                locale="pt-BR" name="faturaOdy" inputStyleClass="align-direita">
+            </p-inputNumber>
+        </div>
+
+        <div class="field col-12 md:col-3" ngModelGroup="outrasDespesas">
+            <label for="currency-us">Emprestimo</label>
+            <p-inputNumber [(ngModel)]="valorEmprestimo" inputId="currency-us" mode="currency" currency="BRL"
+                locale="pt-BR" name="emprestimo">
+            </p-inputNumber>
+        </div>
+
+        <div class="field col-12 md:col-3">
+            <label for="currency-us">Dizimo</label>
+            <p-inputNumber [(ngModel)]="valorDizimo" inputId="currency-us" mode="currency" currency="BRL" locale="pt-BR"
+                name="dizimo">
+            </p-inputNumber>
+        </div>
+
+
+    </div>
+    <p-button label="Submit"></p-button>
+    <app-form-debug [form]="f"></app-form-debug>
+</form>

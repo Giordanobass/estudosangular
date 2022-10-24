@@ -1,0 +1,85 @@
+<h5>Dados Pessoais</h5>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+
+<div class="form-grid grid">
+    <div class="col-12 md:col-4">
+        <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+            <input type="text" [ngModel]="cadastro.nome" pInputText placeholder="Nome" name="nome" id="nome" 
+                #nome="ngModel" class="form-control">
+        </div>
+    </div>
+
+    <div class="col-12 md:col-4">
+        <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-at"></i></span>
+            <input type="email" [ngModel]="cadastro.email" pInputText placeholder="Email" name="email" id="email"
+                 #email="ngModel" class="form-control">
+
+        </div>
+    </div>
+
+    <div class="col-12 md:col-4" >
+        <div class="p-inputgroup" >
+            <span class="p-inputgroup-addon"><i class="pi pi-sync"></i></span>
+            <input type="text" ngModel  #cep="ngModel" pInputText pattern="^[-/d]/d*$" placeholder="CEP"
+                name="cep" (blur)="consultaCEP($event, f)" id="cep" class="form-control">
+            
+        </div>
+    </div>
+
+    <div class="col-12 md:col-4">
+        <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-sort-alpha-up"></i></span>
+            <input type="text" [ngModel]="cadastro.rua" pInputText placeholder="Rua" name="rua" id="rua" 
+                #rua="ngModel" class="form-control">
+
+        </div>
+    </div>
+
+    <div class="col-12 md:col-4">
+        <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-sort-numeric-down"></i></span>
+            <input type="text" [ngModel]="cadastro.numero" pInputText placeholder="Numero" name="numero" id="numero"
+                 #numero="ngModel" class="form-control">
+
+        </div>
+    </div>
+    <div class="col-12 md:col-4">
+        <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-sort-alpha-down"></i></span>
+            <input type="text" [ngModel]="cadastro.complemento" pInputText placeholder="Complemento" name="complemento"
+                id="complemento"  #complemento="ngModel" class="form-control">
+        </div>
+    </div>
+    <div class="col-12 md:col-4">
+        <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-sort-alpha-up"></i></span>
+            <input type="text" [(ngModel)]="cadastro.bairro" pInputText placeholder="Bairro" name="bairro" id="bairro"
+                 #bairro="ngModel" class="form-control">
+
+        </div>
+    </div>
+    <div class="col-12 md:col-4">
+        <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-sort-alpha-up"></i></span>
+            <input type="text" [ngModel]="cadastro.cidade" pInputText placeholder="Cidade" name="cidade" id="cidade"
+                 #cidade="ngModel" class="form-control">
+
+        </div>
+    </div>
+    <div class="col-12 md:col-4">
+        <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-sort-alpha-up"></i></span>
+            <input type="text" [ngModel]="cadastro.estado" pInputText placeholder="Estado" name="estado" id="estado"
+                 #estado="ngModel" class="form-control">
+
+        </div>
+    </div>
+
+</div>
+    <button type="submit" pButton >Submit</button>
+
+    <app-form-debug [form]="f"></app-form-debug>
+
+</form>
